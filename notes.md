@@ -2,3 +2,4 @@
 
 - 1주차: GitHub 계정 만들기
 - 2주차: 저장소와 파일 관리
+- 3주차: GitHub Desktop
