@@ -1,0 +1,25 @@
+name: 사이트 점검
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  check-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 저장소 내려받기
+        uses: actions/checkout@v4
+
+      - name: 파일 목록 보기
+        run: ls -la
+
+      - name: index.html이 있는지 확인
+        run: |
+          if [ -f index.html ]; then
+            echo "✅ index.html이 있습니다."
+          else
+            echo "❌ index.html이 없습니다. 웹사이트 첫 페이지가 필요합니다."
+            exit 1
+          fi
